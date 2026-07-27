@@ -3,7 +3,7 @@ package dev.kaeliton.CadastroDeNinjas.Missoes;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("missoes") // -> localhost:8080/"misseos"
+@RequestMapping("/missoes") // -> localhost:8080/"misseos"
 public class MissoesController {
 
     // Adicionar Missao (CREATE)

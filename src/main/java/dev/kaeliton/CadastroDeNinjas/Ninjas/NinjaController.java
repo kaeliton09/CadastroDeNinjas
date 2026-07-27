@@ -3,7 +3,7 @@ package dev.kaeliton.CadastroDeNinjas.Ninjas;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping
+@RequestMapping("/ninjas")
 public class NinjaController {
 
     @GetMapping("/boasvindas")
@@ -19,11 +19,11 @@ public class NinjaController {
     }
 
     // Mostrar todos os Ninjas (Read)
-    @GetMapping("/ninjas")
+    @GetMapping("/listar")
     public String mostrarNinjas(){
         return "sem ninjas no momento";
     }
-    
+
     // Mostrar ninja por id (Read)
     @GetMapping("/ninjaID")
     public String mostrarNinjaPorID(){
