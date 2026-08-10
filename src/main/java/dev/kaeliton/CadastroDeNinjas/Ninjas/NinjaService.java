@@ -11,9 +11,11 @@ public class NinjaService {
 
 
     private NinjasRepository ninjasRepository;
+    private NinjaMapper ninjaMapper;
 
-    public NinjaService(NinjasRepository ninjasRepository) {
+    public NinjaService(NinjasRepository ninjasRepository, NinjaMapper ninjaMapper) {
         this.ninjasRepository = ninjasRepository;
+        this.ninjaMapper = ninjaMapper;
     }
 
     // listar todos os ninjas
@@ -28,8 +30,10 @@ public class NinjaService {
     }
 
     // criar um novo ninja
-    public NinjaModel criarNinja(NinjaModel ninja){
-        return ninjasRepository.save(ninja);
+    public NinjaDTO criarNinja(NinjaDTO ninjaDTO){
+        NinjaModel ninja = new ninjaMapper.map(ninjaDTO);
+        ninja = ninjasRepository.save(ninja);
+        return ninjaMapper.map(ninja);
     }
 
     // deletar um ninja
